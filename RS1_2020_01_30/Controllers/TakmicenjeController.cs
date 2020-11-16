@@ -182,5 +182,40 @@ namespace RS1_2020_01_30.Controllers
 
             return RedirectToAction("Index","Takmicenje");//ne zaboravi Redirect!
         }
+
+        public IActionResult Results(int id)
+        {
+            var takmicenje = db.Takmicenje.Where(x => x.Id == id)
+                                        .Include(x => x.Predmet)
+                                        .Include(x => x.Skola)
+                                        .FirstOrDefault();
+
+            var rezultati = new TakmicenjeRezultatiVM
+            {
+                TakmicenjeId = id,
+                PredmetId = takmicenje.PredmetId,
+                PredmetNaziv=takmicenje.Predmet.Naziv,
+                Razred=takmicenje.Predmet.Razred,
+                SkolaNaziv=takmicenje.Skola.Naziv,
+                SkolaId = takmicenje.SkolaId,
+                Datum = takmicenje.Datum,
+            };
+
+
+            return View(rezultati);
+        }
+
+        public IActionResult Lock(int id)
+        {
+            var takmicenje = db.Takmicenje.Find(id);
+
+            if(!takmicenje.IsPristupio)
+            {
+                takmicenje.IsPristupio = true;
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("Results", "Takmicenje", new { id = id });
+        }
     }
 }

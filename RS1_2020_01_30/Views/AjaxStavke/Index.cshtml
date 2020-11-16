@@ -1,0 +1,28 @@
+﻿@model RS1_2020_01_30.ViewModels.AjaxStavkeIndexVM
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Odjeljenje</th>
+            <th>Broj u dnevniku</th>
+            <th>Pristupio</th>
+            <th>Rezultat bodovi(max 100)</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.rows)
+        {
+            <tr>
+                <td>@item.Odjeljenje</td>
+                <td>@item.BrojUDnevniku</td>
+                <td>@item.IsPristupio</td>
+                <td>@item.Bodovi</td>
+                <td>
+                    @Html.ActionLink("Uredi","AddEdit","AjaxStavke",new { id = item.TakmicenjeUcesnikId }, new { @class="btn btn-default"})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -38,3 +38,5 @@ D:\Razvoj softvera 1\Razvoj-Softvera-1-master\U slucaju zajeba\Razvoj-Softvera-1
 D:\Razvoj softvera 1\Razvoj-Softvera-1-master\U slucaju zajeba\Razvoj-Softvera-1-master\Ispiti\2020-01-30\Postavka\RS1_2020_01_30\obj\Debug\netcoreapp2.1\Razor\Views\Takmicenje\Index.cshtml.g.cs
 D:\Razvoj softvera 1\Razvoj-Softvera-1-master\U slucaju zajeba\Razvoj-Softvera-1-master\Ispiti\2020-01-30\Postavka\RS1_2020_01_30\obj\Debug\netcoreapp2.1\Razor\Views\Takmicenje\Choose.cshtml.g.cs
 D:\Razvoj softvera 1\Razvoj-Softvera-1-master\U slucaju zajeba\Razvoj-Softvera-1-master\Ispiti\2020-01-30\Postavka\RS1_2020_01_30\obj\Debug\netcoreapp2.1\Razor\Views\Takmicenje\Add.cshtml.g.cs
+D:\Razvoj softvera 1\Razvoj-Softvera-1-master\U slucaju zajeba\Razvoj-Softvera-1-master\Ispiti\2020-01-30\Postavka\RS1_2020_01_30\obj\Debug\netcoreapp2.1\Razor\Views\Takmicenje\Results.cshtml.g.cs
+D:\Razvoj softvera 1\Razvoj-Softvera-1-master\U slucaju zajeba\Razvoj-Softvera-1-master\Ispiti\2020-01-30\Postavka\RS1_2020_01_30\obj\Debug\netcoreapp2.1\Razor\Views\AjaxStavke\Index.cshtml.g.cs

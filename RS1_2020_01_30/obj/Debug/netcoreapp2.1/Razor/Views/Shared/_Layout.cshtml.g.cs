@@ -49,7 +49,7 @@ namespace AspNetCore
             WriteLiteral("\n\n\n<!DOCTYPE html>\n<html>\n");
             EndContext();
             BeginContext(26, 681, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e6517de4f3dd40c4a31c71407f90cc4a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e51a157b8784979aa3cee3322276214", async() => {
                 BeginContext(32, 118, true);
                 WriteLiteral("\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>");
                 EndContext();
@@ -95,7 +95,7 @@ namespace AspNetCore
             WriteLiteral("\n");
             EndContext();
             BeginContext(708, 1073, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e9ea6f45a7f44ea0a0e1cf93600d83eb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bbf743f1fc1f45dd9a31956b39e6cb96", async() => {
                 BeginContext(714, 507, true);
                 WriteLiteral(@"
     <nav class=""navbar navbar-inverse navbar-fixed-top"">
@@ -110,7 +110,7 @@ namespace AspNetCore
                 ");
                 EndContext();
                 BeginContext(1221, 95, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ea3d6fea498f47d0b6deb7de2ff1264f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07e897d53ae246c69016e7e342f11b33", async() => {
                     BeginContext(1298, 14, true);
                     WriteLiteral("RS1_2020_01_30");
                     EndContext();
@@ -137,7 +137,7 @@ namespace AspNetCore
                 WriteLiteral("\n            </div>\n            <div class=\"navbar-collapse collapse\">\n                <ul class=\"nav navbar-nav\">\n                    <li>");
                 EndContext();
                 BeginContext(1455, 64, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6e053d4e72074abeac9fa1948aed6e17", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ea69c6b06974aabb9df67bf5f040fa1", async() => {
                     BeginContext(1511, 4, true);
                     WriteLiteral("Home");
                     EndContext();

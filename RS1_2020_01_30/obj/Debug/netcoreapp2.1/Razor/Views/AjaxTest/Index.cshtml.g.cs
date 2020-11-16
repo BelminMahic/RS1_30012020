@@ -56,7 +56,7 @@ namespace AspNetCore
             WriteLiteral("\n<h2>Ovo je index.cshtml</h2>\n\n<label>Pozovi AjaxTestAction i rezultat smjesti u testAjaxDiv</label>\n\n");
             EndContext();
             BeginContext(137, 110, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "29fb29c40adb476a90bcf5e1d9c236cd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "266d1b0f32974319b3de8af74c182e8c", async() => {
                 BeginContext(236, 7, true);
                 WriteLiteral("Pokreni");
                 EndContext();

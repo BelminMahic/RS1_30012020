@@ -1,0 +1,22 @@
+﻿@model RS1_2020_01_30.ViewModels.TakmicenjeRezultatiVM
+
+
+<h3>Rezultati takmicenja</h3>
+
+Skola domacin: @Model.SkolaNaziv<br />
+Predmet:@Model.PredmetNaziv<br />
+Razred:@Model.Razred<br />
+Datum:@Model.Datum
+<br />
+
+@Html.ActionLink("Zakljucaj", "Lock", "Takmicenje", new { id=Model.TakmicenjeId }, new { @class="btn btn-primary"})
+
+<div id="ajaxDiv">
+
+</div>
+
+<script>
+    $.get("/AjaxStavke/Index?id=@Model.TakmicenjeId", function (result) {
+        $("#ajaxDiv").html(result);
+    });
+</script>
