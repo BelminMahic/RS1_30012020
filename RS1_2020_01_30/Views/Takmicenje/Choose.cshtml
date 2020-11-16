@@ -1,0 +1,41 @@
+﻿@model RS1_2020_01_30.ViewModels.TakmicenjeChooseVM
+
+
+
+<h3>Skola domacin: @Model.SkolaNaziv</h3>
+<h3>Razred: @Model.RazredNaziv</h3>
+@Html.HiddenFor(x=>x.SkolaID)
+<table class="table">
+    <thead>
+        <tr>
+            <th>Takmicenje ID</th>
+            <th>Predmet</th>
+            <th>Razred</th>
+            <th>Datum</th>
+            <th>Broj ucenika koji nisu pristupili</th>
+            <th>Najbolji ucesnik(Skola | Odjeljenje | Ime i prezime)</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.rows)
+        {
+            <tr>
+                <td>@item.TakmicenjeId</td>
+                <td>@item.PredmetNaziv</td>
+                <td>@item.Razred</td>
+                <td>@item.Datum</td>
+                <td>@item.BrojUcesnikaKojiNisuPristupili</td>
+                <td>@item.NajboljiUcesnikSkola | @item.NajboljiUcesnikOdjeljenje | @item.NajboljiUcesnikImePrezime</td>
+                <td>
+                    @Html.ActionLink("Rezultati","Results","Takmicenje",new { @id = item.TakmicenjeId },new { @class="btn btn-default" })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+
+
+
+</table>

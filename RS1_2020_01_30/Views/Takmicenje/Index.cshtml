@@ -1,0 +1,20 @@
+﻿@model RS1_2020_01_30.ViewModels.TakmicenjeIndexVM
+
+
+
+
+<h3>Korisnik moze odabrati</h3>
+
+@using (Html.BeginForm("Choose","Takmicenje")) //ovo mi je neophodno
+{
+    <div>
+        @Html.Label("Skola domacin: ")
+        @Html.DropDownListFor(x => x.SkolaId, Model.domacini,"",new { @class="form-control" })
+    </div>
+    <div>
+        @Html.Label("Razred: ")
+        @Html.DropDownListFor(x => x.RazredID, Model.razredi, "", new { @class = "form-control" })
+    </div>
+    <br />
+    <input type="submit" class="btn btn-default" value="Odaberi" /> //nekad umjesto obicnog ActionLinka je dovoljan input type
+}
