@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RS1_2020_01_30.EF;
+using RS1_2020_01_30.EntityModels;
 using RS1_2020_01_30.ViewModels;
 
 namespace RS1_2020_01_30.Controllers
@@ -121,10 +122,65 @@ namespace RS1_2020_01_30.Controllers
                         };
                     }
                     ),
-                Datum=DateTime.Now.ToShortDateString()
+                Datum=DateTime.Now
             };
 
             return View(add);
+        }
+
+
+        public IActionResult Save(TakmicenjeAddVM model)
+        {
+            var predmet = db.Predmet.Where(x => x.Naziv.Contains(model.PredmetId) && x.Razred==model.RazredID)
+                                    .FirstOrDefault();
+
+            var spasi = new Takmicenje
+            {
+                SkolaId=model.SkolaId,
+                PredmetId=predmet.Id,
+                Datum=model.Datum,
+                Razred=model.RazredID,
+                IsPristupio=false //ovo je izZakljucano 
+            };
+            db.Add(spasi);
+            db.SaveChanges();
+
+            //ovdje smo pronalazili sve odlicne u razredu za odredjeni predmet
+            var odlicniIzPredmeta = db.DodjeljenPredmet
+                                  .Where(x => x.ZakljucnoKrajGodine == 5 && x.Predmet.Id == predmet.Id)
+                                  .Select(t => new TakmicenjeUcesnik
+                                  {
+                                      OdjeljenjeStavkaId=t.OdjeljenjeStavkaId,
+                                      UcesnikIsPristupio=false,
+                                      Bodovi=0
+                                  }).ToList();
+
+            foreach (var item in odlicniIzPredmeta)
+            {
+                //ovdje smo trazili koji sve to ucesnici imaju prosjecnu ocjenu vecu od 4.
+                bool manjeOdCetiri = db.DodjeljenPredmet
+                                   .Where(x => x.OdjeljenjeStavkaId == item.OdjeljenjeStavkaId && x.OdjeljenjeStavka.Odjeljenje.Razred == spasi.Razred)
+                                   .Select(i => i.ZakljucnoKrajGodine)
+                                   .Average() > 4;
+
+                if(manjeOdCetiri)
+                {
+                    var takmicar = new TakmicenjeUcesnik
+                    {
+                        TakmicenjeId = spasi.Id,
+                        OdjeljenjeStavkaId = item.OdjeljenjeStavkaId,
+                        Bodovi = 0,
+                        UcesnikIsPristupio = false
+                    };
+
+                    db.Add(takmicar);
+                    db.SaveChanges();
+                }
+
+
+            }
+
+            return RedirectToAction("Index","Takmicenje");//ne zaboravi Redirect!
         }
     }
 }

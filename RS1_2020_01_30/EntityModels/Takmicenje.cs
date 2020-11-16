@@ -12,8 +12,7 @@ namespace RS1_2020_01_30.EntityModels
         public int SkolaId { get; set; }
         public Predmet Predmet { get; set; }
         public int PredmetId { get; set; }
-        public Odjeljenje Odjeljenje { get; set; }
-        public int OdjeljenjeId { get; set; }
+        public int Razred { get; set; }
         public DateTime Datum { get; set; }
         public bool IsPristupio { get; set; }//Zakljucaj
     }

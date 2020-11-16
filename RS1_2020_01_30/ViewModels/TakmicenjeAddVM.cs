@@ -14,6 +14,6 @@ namespace RS1_2020_01_30.ViewModels
         public string PredmetId { get; set; }
         public List<SelectListItem> razredi { get; set; }
         public int RazredID { get; set; }
-        public string Datum { get; set; }
+        public DateTime Datum { get; set; }
     }
 }
